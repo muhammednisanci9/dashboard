@@ -1,0 +1,16 @@
+RewriteEngine on
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
+RewriteRule ^sitemap.xml$ sitemap.php [NC,L]
+
+
+RewriteRule ^iletisim-([0-9a-zA-Z-_]+)-([0-9]+)$  iletisimdetay.php?sefk=$1&iletisim_id=$2 [L,QSA]
+
+
+RewriteRule ^ziyaretci-([0-9a-zA-Z-_]+)-([0-9]+)$  logdetay.php?log_ip=$1&log_id=$2 [L,QSA]
+
+
